@@ -1,0 +1,19 @@
+<div id="clock" class="sa-clock">00:00:00</div>
+<script>
+function startTime() {
+  let time = new Date();
+  let hour = time.getHours();
+  let minute = time.getMinutes();
+  let second = time.getSeconds();
+  hour = checkTime(hour);
+  minute = checkTime(minute);
+  second = checkTime(second);
+  document.getElementById('clock').innerHTML = hour + ":" + minute + ":" + second;
+}
+setInterval(startTime, 1000);
+
+function checkTime(i) {
+  if (i < 10) { i = "0" + i; }
+  return i;
+}
+</script>
